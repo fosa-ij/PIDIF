@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #canvas_container {
+            width: 1250px;
+            height: 450px;
+            overflow: auto;
+            background: #333;
+            text-align: center;
+            border: 3px solid;
+        }
+    </style>
+
+    <title>PIDIF/pdf</title>
+</head>
+<body>
+    <div id="my_pdf_viewer">
+        <div id="canvas_container">
+            <canvas id="pdf_renderer"> <%= pdf %>  </canvas>
+        </div>
+        <div id="navigation-controls">
+            <button id="go_previous">Previous</button>
+            <input type="number" value="1" id="current_page">
+            <button id="go_next">Next</button>
+        </div>
+        <div id="zoom-controls">
+            <button id="zoom_in">+</button>
+            <button id="zoom_out">-</button>
+        </div>
+    </div>
+</body>
+</html>

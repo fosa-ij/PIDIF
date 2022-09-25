@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img {
+          width: 100%;
+        }
+    </style>
+    <title>PIDIF/files</title>
+</head>
+<body>
+    <div>
+        <h1>BOOKs LIBRARY</h1>
+    </div>
+    <div>
+        <% if(files){ %>
+            <% files.forEach(function(file) { %>
+              <div class="card card-body mb-3">
+                <% if(file.isImage) { %>
+                  <img src="books/<%= file.filename %>" alt="">
+                <% } else { %>
+                    <%= file.filename %>
+                <% } %>
+                <form method="POST" action="/files/delete/<%= file._id %>?_method=DELETE">
+                    <button class="btn btn-danger btn-block mt-4">Delete</button>
+                </form>
+              </div>
+              <% }) %>
+        <% } else { %>
+            <p>No files to show</p>
+        <% } %>
+    </div>
+</body>
+</html>
