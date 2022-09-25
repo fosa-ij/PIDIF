@@ -11,10 +11,13 @@
   "author": "Efosa",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "connect-mongo": "^4.6.0",
     "dotenv": "^16.0.2",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
     "gridfs-stream": "^1.1.1",
     "method-override": "^3.0.0",
     "mongodb": "^4.10.0",
@@ -22,7 +25,10 @@
     "morgan": "^1.10.0",
     "multer": "^1.3.0",
     "multer-gridfs-storage": "^5.0.2",
-    "pdfjs-dist": "^2.16.105"
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "pdfjs-dist": "^2.16.105",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

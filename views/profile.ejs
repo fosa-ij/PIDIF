@@ -1,0 +1,15 @@
+<%- include('partials/header') -%>
+    <div>
+        <% if (!user) { %> 
+            <h2>Authentication is required to access this page</h2>
+            <h3>please <a href="/login">login</a></h3>
+        <% } else { %> 
+            <h2>
+                <%= `Welcome ${user.userName}` %>
+            </h2>
+            <div>
+                <a href="/logout">Logout</a>
+            </div>
+        <% } %> 
+    </div>
+<%- include('partials/footer') -%>

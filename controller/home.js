@@ -15,6 +15,9 @@ const gridFSBucket = () => {
 }
 
 module.exports = {
+    getIndex: (req, res) => {
+        res.render('index.ejs')
+    },
     getHomepage: (req, res) => {
         try{
             gridFSBucket().find({}).toArray((err, files) => {
@@ -53,7 +56,7 @@ module.exports = {
         })
     },
     getProfile: (req, res) => {
-        res.json(req.user)
+        res.render('profile.ejs', { user: req.user })
     },
     getFiles: async (req, res) => {
         try{
