@@ -1,0 +1,297 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ******************************************************
+MY STYLING === MAIN PAGE LAYOUT
+****************************************************** */
+/* *:not(html, body) {
+    margin: 10px;
+    border: 1px solid red;
+} */
+body {
+    height: 100vh;
+    width: auto;
+    background-color: #120d31;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+header {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: 15%;
+}
+.div-header div + p {
+    width: 60%;
+}
+main {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* height: 100%; */
+    align-items: flex-start;
+}
+
+
+/* **************************************************
+STYLE ADJUSTMENTS 
+************************************************** */
+.hidden {
+    display: none;
+}
+.main-div {
+    background-color: #F5F5F5;
+    color: black;
+    width: 420px;
+    height: 630px;
+    border-radius: 25px;
+    margin-left: 15%;
+}
+.div-header h1 a {
+    font-size: 65px;
+    font-weight: 900;
+    text-decoration: none;
+    color: white;
+}
+.div-header > div p {
+    font-size: 18px;
+    font-weight: 100;
+    word-spacing: 4px;
+    margin: 5px 0 0 0;
+    color: #FF00EF;
+}
+.div-header div + p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 36px;
+    word-spacing: 3px;
+    margin: 35px 0 0 0;
+}
+
+
+.top-section {
+    margin: 20px 30px;
+}
+.login-bottom-section {
+    margin: 35px 0px;
+}
+.top-section h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 5px 0 10px 0;
+}
+.login-top-section h3 {
+    font-weight: 300;
+}
+.top-section p {
+    font-size: 15px;
+    font-weight: 200;
+    word-spacing: 2px;
+}
+.main-div section + section {
+    margin: 30px 30px;
+    width: 80%;
+}
+.field {
+    margin: 20px 0 25px 0;
+    /* width: 89%; */
+    width: 70%;
+}
+#emailHelp {
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 200;
+    color: rgb(195, 143, 14);
+    width: 100%;
+}
+.emailHelp {
+    margin-bottom: 0px;
+}
+.s-l-text {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+}
+.s-l-altText {
+    color: #691464;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+}
+.button {
+    text-align: end;
+}
+.button-submit {
+    background-color: #691464;
+    color: white;
+    outline: 0px;
+    border: 0px solid transparent;
+    border-radius: 5px;
+    padding: 8px 20px 8px 20px;
+    font-weight: 500;
+}
+.input-field {
+    background-color: #D9D9D9;
+    padding: 7px 5px 7px 7px;
+    font-size: 13px;
+    outline: 0px;
+    border: 0px solid #120d31;
+    border-radius: 5px;
+    width: 95%;
+}
+input::placeholder {
+    /* background-color: #D9D9D9; */
+    color: #120d31a5;
+    /* padding: ; */
+    font-size: 13px;
+    /* border: 1px solid #691464; */
+    border-radius: 5px;
+}
+.alert-danger {
+    color: red;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/* ********************************************
+HOME PAGE STYLING
+******************************************** */
+.home-container {
+    flex-direction: row;
+}
+
+/* Group 1 */
+
+/* position: absolute;
+width: 832px;
+height: 982px;
+left: 286px;
+top: 0px; */
+
+
+
+/* Rectangle 1 */
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+}
+.image img {
+    position: relative;
+    width: 670px;
+    height: 750px;
+    right: 260px;
+    top: 0px;
+}
+.home-header {
+    /* width: ; */
+}
+.home-nav {
+    margin: 40px 40px 0 0;
+}
+.nav-btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    color: white;
+    margin: 0 10px;
+    background-color: #691464;
+    border-radius: 5px;
+    font-weight: 200;
+}
+.nav-btn:hover {
+    border: 1px solid #fff;
+}
+.about-btn {
+    background-color: white;
+    color: black;
+    font-weight: 300;
+    /* padding: 8px 20px; */
+}
+.home-div-header {
+    margin-left: 23%;
+    margin-right: 0;
+}
+.home-div-header h1 a{
+    font-size: 85px;
+}
+.home-div-header div + p{
+    /* font-size: 20px; */
+    line-height: 37px;
+    font-weight: 800;
+}
+
+
+/* ****************************************
+LIBRARY HOMEPAGE STYLING
+******************************************* */
+.lib-header{
+    display: flex;
+    flex-direction: column;
+}
+.content-box {
+    width: 300px;
+}

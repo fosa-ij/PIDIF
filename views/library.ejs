@@ -4,34 +4,232 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="library.css"> -->
+    <title>PIDIF</title>
     <style>
-        img {
-          width: 100%;
-        }
+body {
+    background: #120D31;
+    color: white;
+}
+.lib-header {
+    display: flex;
+    flex-direction: column;
+}
+.first-section {
+    display: flex;
+    align-items: center;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    position: fixed;
+    z-index: 1;
+    justify-content: space-around;
+    background-color: #120D31;
+    border-bottom: 1px solid whitesmoke;
+    box-shadow: 0 3px 6px #000;
+}
+.middle-sec {
+    position: absolute;
+    z-index: -1;
+    top: 15%;
+    left: 3%;
+    margin: 30px 40px;
+}
+.second-section {
+    display: flex;
+    justify-content: space-between;
+}
+.book-main-section {
+    display: flex;
+}
+.upload-form {
+    margin: 15px;
+}
+input[type="file"] {
+    border: 2px solid #691464;
+    padding: 10px 45px 10px 10px;
+    cursor: pointer;
+}
+.upload-form button {
+    padding: 17px 20px;
+    border: 0px;
+    font-size: 15px;
+    color: white;
+    background: #691464;
+    cursor: pointer;
+}
+.btn-danger {
+    padding: 8px 16px;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 100;
+    color: white;
+    background: #691464;
+    cursor: pointer;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* width: fit-content; */
+}
+.content-box {
+    width: 180px;
+    height: 110px;
+    /* margin: 15px 12px; */
+    object-fit: cover;
+}
+/* .profile-section {
+    position: relative;
+    bottom: 0%;
+    right: 5%;
+    border: 2px solid #691464;
+    border-radius: 10px;
+} */
+/* .content-block {
+    display: flex;
+    max-width: 73%;
+    margin-left: 2%;
+    margin-bottom: 5%;
+    flex-wrap: wrap;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+} */
+.content-block {
+    display: grid;
+    grid-template-columns: repeat(5, 6fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 13px;
+    justify-items: stretch;
+    align-items: stretch;
+    margin-left: 4%;
+    margin-bottom: 4%;
+    background: white;
+    padding: 20px 60px 25px 30px;
+    border-radius: 12px;
+    height: 450px;
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+.content-block::-webkit-scrollbar {
+    width: 0;
+}
+.profile-section {
+    position: fixed;
+    top: 70%;
+    right: 4%;
+    text-align: center;
+    height: 200px;
+    width: 215px;
+    border: 2px solid #691464;
+    border-radius: 10px;
+}
+.first-section h1 {
+    margin-bottom: 5px;
+}
+.first-section span {
+    color: darkgray;
+    font-weight: 100;
+}
+.first-section h2 {
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+.profile-section div a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 35px;
+    font-size: 16px;
+    background: #fff;
+    border-radius: 10px;
+}
+.profile-section .username {
+    font-size: 27px;
+}
+.content-box h3 a {
+    text-decoration: none;
+    color: black;
+}
+#no-files {
+    background: white;
+    color: black;
+    margin: 20px 30px;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+#no-files h3 {
+    margin-bottom: 0;
+}
     </style>
-    <title>PIDIF/files</title>
 </head>
 <body>
-    <div>
-        <h1>BOOKs LIBRARY</h1>
-    </div>
-    <div>
-        <% if(files){ %>
-            <% files.forEach(function(file) { %>
-              <div class="card card-body mb-3">
-                <% if(file.isImage) { %>
-                  <img src="books/<%= file.filename %>" alt="">
-                <% } else { %>
-                    <%= file.filename %>
-                <% } %>
-                <form method="POST" action="/files/delete/<%= file._id %>?_method=DELETE">
-                    <button class="btn btn-danger btn-block mt-4">Delete</button>
+    <div class="lib-header">
+        <section class="first-section">
+            <div>
+                <h1>PIDIF</h1>
+                <span>your personal book library</span>
+            </div>
+            <div class="upload-form">
+                <h2>Upload</h2>
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <!-- <label for="file">Select File</label> -->
+                    <input type="file" name="file" placeholder="Select File">
+                    <button type="submit">Upload</button>
                 </form>
-              </div>
-              <% }) %>
-        <% } else { %>
-            <p>No files to show</p>
-        <% } %>
+            </div>
+        </section>
+        <section class="middle-sec">
+            <div>
+                <h1>YOUR PIDIF BOOK(s)</h1>
+            </div>
+            <div class="second-section">
+                <div class="book-main-section">
+                    <% if(files.length){ %>
+                        <div class="content-block">
+                            <% files.forEach(function(file) { %>
+                                <% if(file.isImage) { %>
+                                    <div>
+                                        <a href="books/<%= file.filename %>"><img src="books/<%= file.filename %>" alt=" <%= file.filename %> " class="content-box"></a>
+                                        <form method="POST" action="/files/delete/<%= file._id %>?_method=DELETE">
+                                            <button class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
+                                <% } else { %>
+                                    <div class="content-box content-box-name">
+                                        <h3><a href="books/<%= file.filename %>"><%= file.filename %></a></h3>
+                                        <form method="POST" action="/files/delete/<%= file._id %>?_method=DELETE">
+                                            <button class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
+                                <% } %>
+                            <% }) %>
+                        </div>
+                    <% } else { %>
+                        <div id="no-files">
+                            <h3>No files to show</h3>
+                            <p>Upload A File</p>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="profile-section">
+                    <% if (!user) { %> 
+                        <h2>Authentication is required to access this page</h2>
+                        <h3>please <a href="/login">login</a></h3>
+                    <% } else { %> 
+                        <h3 class="username"><%= `${user.userName}` %></h3>
+                        <div>
+                            <a href="/logout">Logout</a>
+                        </div>  
+                    <% } %> 
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>

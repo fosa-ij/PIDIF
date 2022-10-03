@@ -1,7 +1,24 @@
 <%- include('partials/header') -%>
-    <main class="container">
-        <div class="row justify-content-center">
-            <section class="col-6 mt-5">
+<div class="container">
+    <header>
+      <div class="div-header">
+          <div>
+            <h1><a href="/">PIDIF</a></h1>
+            <p>your personal book library</p>
+          </div>
+          <!-- <div> -->
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, ea possimus. Beatae doloremque iure necessitatibus libero vel.</p>
+          <!-- </div> -->
+      </div>
+    </header>
+    <main>
+        <div class="main-div">
+            <section class="top-section">
+              <h3>Create an account</h3>
+              <p>Already have an account? <a href="/login" class="s-l-altText">Login</a></p>
+            </section>
+            <section>
+                <h1 class="s-l-text">Sign Up</h1>
                 <% if (locals.messages.errors) { %>
                     <% messages.errors.forEach( el => { %>
                         <div class="alert alert-danger"><%= el.msg %></div>
@@ -13,27 +30,30 @@
                     <% }) %>    
                 <% } %>
                 <form action="/signup" method="POST">
-                    <div class="mb-3">
-                        <label for="userName" class="form-label">User Name</label>
-                        <input type="text" class="form-control" id="userName" name="userName">
-                      </div>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    <div class="field">
+                        <label for="userName" class="hidden">User Name</label>
+                        <input type="text" class="input-field" id="userName" name="userName" placeholder="Username">
                     </div>
-                    <div class="mb-3">
-                      <label for="password" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="password" name="password">
+                    <div class="field emailHelp">
+                      <label for="exampleInputEmail1" class="hidden">Email address</label>
+                      <input type="email" class="input-field" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Email">
                     </div>
-                    <div class="mb-3">
-                        <label for="confirmPassword" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
-                      </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div id="emailHelp">We'll never share your email with anyone else.</div>
+                    <div class="field">
+                      <label for="password" class="hidden">Password</label>
+                      <input type="password" class="input-field" id="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="field">
+                        <label for="confirmPassword" class="hidden">Confirm Password</label>
+                        <input type="password" class="input-field" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+                    </div>
+                    <div class="field button">
+                        <button type="submit" class="button-submit">Sign Up</button>
+                    </div>
                   </form>
             </section>
         </div>
     </main>
+</div>
 
 <%- include('partials/footer') -%>

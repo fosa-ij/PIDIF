@@ -52,7 +52,7 @@ module.exports = {
                 return res.end(`${err}`)
             }
             // res.json({file: req.file})
-            res.redirect('/')
+            res.redirect('/library/books')
         })
     },
     getProfile: (req, res) => {

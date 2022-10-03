@@ -4,9 +4,9 @@ const User = require("../model/User");
 
 module.exports = {
     getLogin: (req, res) => {
-        if (req.user) {
-            return res.redirect("/profile");
-        }
+        // if (req.user) {
+        //     return res.redirect("/profile");
+        // }
         res.render("login", {
             title: "Login",
         });
@@ -39,7 +39,7 @@ module.exports = {
                 return next(err);
             }
             req.flash("success", { msg: "Success! You are logged in." });
-            res.redirect(req.session.returnTo || "/profile");
+            res.redirect(req.session.returnTo || "/library/books");
             });
         })(req, res, next);
     },
@@ -57,9 +57,9 @@ module.exports = {
         // });
     },
     getSignup: (req, res) => {
-        if (req.user) {
-            return res.redirect("/profile");
-        }
+        // if (req.user) {
+        //     return res.redirect("/profile");
+        // }
         res.render("signup", {
             title: "Create Account",
         });
@@ -109,7 +109,7 @@ module.exports = {
                 if (err) {
                     return next(err);
                 }
-                res.redirect("/profile");
+                res.redirect("/library/books");
                 });
             });
             }

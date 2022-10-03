@@ -1,10 +1,22 @@
 <%- include('partials/header') -%> 
-<br>
-<main>
-    <div>
-        <a href="/login"> Login</a>
-        <a href="/signup"> Signup</a>
-    </div>
-</main>
+<div class="container home-container">
+    <header class="home-header">
+        <div class="div-header home-div-header">
+            <div>
+                <h1><a href="/">PIDIF</a></h1>
+                <p>your personal book library</p>
+            </div>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, ea possimus. Beatae doloremque iure necessitatibus libero vel.</p>
+        </div>
+    </header>
+    <section class="image">
+        <img src="/image/pidifBG.png" alt="bg image">
+    </section>
+    <nav class="home-nav">
+        <span ><a href="/about" class="nav-btn about-btn"> About</a></span>
+        <span ><a href="/login" class="nav-btn s-l-home-btn"> Login</a></span>
+        <span ><a href="/signup" class="nav-btn s-l-home-btn"> Signup</a></span>
+    </nav>
+</div>
 
 <%- include('partials/footer') -%> 

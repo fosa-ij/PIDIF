@@ -26,7 +26,7 @@ module.exports = {
                 const filename = file.originalname;
                 const fileInfo = {
                     filename: filename,
-                    bucketName: 'uploads'
+                    bucketName: 'uploads',
                 };
                 resolve(fileInfo)
             })
