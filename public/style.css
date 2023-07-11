@@ -180,6 +180,7 @@ STYLE ADJUSTMENTS
     font-size: 17px;
     font-weight: 500;
     text-decoration: none;
+    cursor: pointer;
 }
 .button {
     text-align: end;
@@ -192,6 +193,7 @@ STYLE ADJUSTMENTS
     border-radius: 5px;
     padding: 8px 20px 8px 20px;
     font-weight: 500;
+    cursor: pointer;
 }
 .input-field {
     background-color: #D9D9D9;
@@ -294,4 +296,146 @@ LIBRARY HOMEPAGE STYLING
 }
 .content-box {
     width: 300px;
+}
+
+
+/* ******************************************
+MOBILE STYLING FOR AUTHENTICATION PAGES
+********************************************* */
+@media screen and (max-width: 500px) { 
+    .container {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    header {
+        /* margin: 35px 10px; */
+        margin: 25px 10px;
+    }
+    main {
+        width: 100%;
+        display: flex;
+        margin: 20px 0 40px;
+    }
+    .main-div {
+        background-color: #F5F5F5;
+        color: black;
+        width: 95%;
+        margin: auto;
+        height: auto;
+        border-radius: 15px;
+        /* border-top-right-radius: 15px;
+        border-top-left-radius: 15px; */
+    }
+    .field {
+        margin: 20px 0 25px 0;
+        width: 95%;
+    }
+    .emailHelp {
+        margin-bottom: 0px;
+    }
+    .input-field {
+        background-color: #D9D9D9;
+        padding: 7px 5px 10px 12px;
+        font-size: 16px;
+        outline: 0px;
+        border: 0px solid #120d31;
+        border-radius: 5px;
+        width: 95%;
+    }
+    #emailHelp {
+        margin-top: 5px;
+        font-size: 14px;
+        font-weight: 300;
+        color: rgb(195, 143, 14);
+        width: 100%;
+    }
+    .button-submit {
+        background-color: #691464;
+        color: white;
+        outline: 0px;
+        border: 0px solid transparent;
+        border-radius: 5px;
+        padding: 8px 20px 8px 20px;
+        font-weight: 500;
+        font-size: 17px;
+    }
+    .div-header {
+        margin-right: 0;
+    }
+    .div-header div + p {
+        display: none;
+    }
+}
+
+
+/* ******************************************
+MOBILE STYLING FOR HOME PAGE
+********************************************* */
+@media screen and (max-width: 500px) {
+    .container {
+        height: auto;
+    }
+    .home-container {
+        flex-direction: column-reverse;
+    }
+    .home-div-header {
+        margin-left: 10px;
+        margin-right: 0;
+    }
+    .home-div-header h1 a {
+        font-size: 80px;
+    }
+    .div-header h1 a {
+        font-size: 65px;
+        font-weight: 300;
+        text-decoration: none;
+        color: white;
+    }
+    .home-div-header div + p {
+        line-height: 37px;
+        font-weight: 200;
+    }
+    .div-header div + p {
+        font-size: 17px;
+        font-weight: 100;
+        line-height: 30px;
+        word-spacing: 3px;
+        margin: 20px 0 0 0;
+    }
+    .div-header div + p {
+        width: auto;
+    }
+    .div-header > div p {
+        font-size: 14px;
+    }
+    .image {
+        width: 100%;
+    }
+    .image img {
+        position: relative;
+        width: inherit;
+        height: auto; 
+        right: 0%;
+        top: 0px;
+    }
+    .home-nav {
+        margin: 25px 10px;
+        text-align: end;
+    }
+    .nav-btn {
+        text-decoration: none;
+        padding: 5px 10px;
+        color: white;
+        margin: 0 3px;
+        background-color: #691464;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: 100;
+    }
+    .about-btn {
+        background-color: white;
+        color: black;
+        font-weight: 500;
+    }
 }

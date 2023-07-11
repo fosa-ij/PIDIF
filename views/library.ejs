@@ -1,96 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <!-- <link rel="stylesheet" type="text/css" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
     <!-- <link rel="stylesheet" href="library.css"> -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <title>PIDIF</title>
     <style>
-body {
-    background: #120D31;
-    color: white;
-}
-.lib-header {
-    display: flex;
-    flex-direction: column;
-}
-.first-section {
-    display: flex;
-    align-items: center;
-    top: 0%;
-    left: 0%;
-    right: 0%;
-    position: fixed;
-    z-index: 1;
-    justify-content: space-around;
-    background-color: #120D31;
-    border-bottom: 1px solid whitesmoke;
-    box-shadow: 0 3px 6px #000;
-}
-.middle-sec {
-    position: absolute;
-    z-index: -1;
-    top: 15%;
-    left: 3%;
-    margin: 30px 40px;
-}
-.second-section {
-    display: flex;
-    justify-content: space-between;
-}
-.book-main-section {
-    display: flex;
-}
-.upload-form {
-    margin: 15px;
-}
-input[type="file"] {
-    border: 2px solid #691464;
-    padding: 10px 45px 10px 10px;
-    cursor: pointer;
-}
-.upload-form button {
-    padding: 17px 20px;
-    border: 0px;
-    font-size: 15px;
-    color: white;
-    background: #691464;
-    cursor: pointer;
-}
-.btn-danger {
-    padding: 8px 16px;
-    border: 0px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: 100;
-    color: white;
-    background: #691464;
-    cursor: pointer;
-}
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    /* width: fit-content; */
-}
-.content-box {
-    width: 180px;
-    height: 110px;
-    /* margin: 15px 12px; */
-    object-fit: cover;
-}
-/* .profile-section {
+      body {
+        background: #120d31;
+        color: white;
+      }
+      .lib-header {
+        display: flex;
+        flex-direction: column;
+      }
+      .first-section {
+        display: flex;
+        align-items: center;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        position: fixed;
+        z-index: 1;
+        justify-content: space-around;
+        background-color: #120d31;
+        border-bottom: 1px solid whitesmoke;
+        box-shadow: 0 3px 6px #000;
+      }
+      .middle-sec {
+        position: absolute;
+        z-index: -1;
+        top: 15%;
+        left: 3%;
+        margin: 30px 40px;
+      }
+      .second-section {
+        display: flex;
+        justify-content: space-between;
+      }
+      .book-main-section {
+        display: flex;
+        height: 427px;
+      }
+      .upload-form {
+        margin: 15px;
+      }
+      input[type="file"] {
+        border: 2px solid #691464;
+        padding: 10px 45px 10px 10px;
+        cursor: pointer;
+      }
+      .upload-form button {
+        padding: 17px 20px;
+        border: 0px;
+        font-size: 15px;
+        color: white;
+        background: #691464;
+        cursor: pointer;
+      }
+      .btn-danger {
+        padding: 4px 10px;
+        border: 0px;
+        border-radius: 5px;
+        font-size: 11px;
+        font-weight: 100;
+        color: white;
+        background: #691464;
+        cursor: pointer;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        /* width: fit-content; */
+      }
+      .content-box {
+        width: 180px;
+        height: 110px;
+        /* margin: 15px 12px; */
+        object-fit: cover;
+      }
+      /* .profile-section {
     position: relative;
     bottom: 0%;
     right: 5%;
     border: 2px solid #691464;
     border-radius: 10px;
 } */
-/* .content-block {
+      /* .content-block {
     display: flex;
     max-width: 73%;
     margin-left: 2%;
@@ -100,136 +108,537 @@ img {
     padding: 20px;
     border-radius: 12px;
 } */
-.content-block {
+      .content-block-image {
+        display: grid;
+        grid-template-columns: repeat(2, 6fr);
+        grid-column-gap: 15px;
+        grid-row-gap: 13px;
+        justify-items: stretch;
+        align-items: stretch;
+        margin-left: 2%;
+        margin-bottom: 4%;
+        background: white;
+        padding: 20px 32px 15px 12px;
+        border-radius: 6px;
+        height: fit-content;
+        max-height: 93.5%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        border-top: 5px solid #691464;
+      }
+      .content-block-image div {
+        height: 150px;
+      }
+      .content-block-files {
+        display: grid;
+        grid-template-columns: repeat(2, 6fr);
+        grid-column-gap: 15px;
+        /* grid-row-gap: 13px; */
+        /* justify-items: stretch;
+        align-items: stretch; */
+        margin-left: 3%;
+        margin-bottom: -5%;
+        background: white;
+        border-radius: 6px;
+        /* padding: 20px 60px 25px 30px; */
+        padding: 2px 40px 5px 0px;
+        height: fit-content;
+        max-height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        border-top: 5px solid #691464;
+      }
+      .content-box-name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 280px;
+        margin: 0 17px;
+        border-bottom: 1px solid #691464;
+      }
+      .content-box-name h3 a {
+        color: black;
+        text-decoration: none;
+      }
+      .content-box-name h3 a:hover {
+        color: #691464;
+        text-decoration:underline
+      }
+      .content-box-name h3 {
+        overflow-x: scroll;
+      }
+      .content-box-name form .btn {
+        margin-left: 15px;
+      }
+      .content-box-name h3::-webkit-scrollbar {
+        display: none;
+      }
+      .content-block-files::-webkit-scrollbar {
+        /* width: 5px;
+        background-color: #691464; */
+        display: none;
+      }
+      .content-block-image::-webkit-scrollbar {
+        display: none;
+      }
+      .profile-section {
+        position: fixed;
+        top: 70%;
+        right: 4%;
+        text-align: center;
+        height: 200px;
+        width: 215px;
+        border: 2px solid #691464;
+        border-radius: 10px;
+      }
+      /* .fa-user-alt {
+        display: none;
+      } */
+      .first-section h1 {
+        margin-bottom: 5px;
+      }
+      .first-section span {
+        color: darkgray;
+        font-weight: 100;
+      }
+      .first-section h2 {
+        margin-bottom: 8px;
+        margin-top: 10px;
+      }
+      .profile-section div a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 35px;
+        font-size: 16px;
+        background: #fff;
+        border-radius: 10px;
+      }
+      .profile-section .username {
+        font-size: 27px;
+      }
+      .profile-icon {
+        margin-top: 15px;
+        font-size: 22px;
+      }
+      .content-box h3 a {
+        text-decoration: none;
+        color: black;
+      }
+      #no-files {
+        background: white;
+        color: black;
+        margin: 20px 30px;
+        padding: 20px;
+        font-size: 18px;
+        border-radius: 10px;
+        height: fit-content;
+      }
+      #no-files h3 {
+        margin-bottom: 0;
+      }
+      .mobile-header {
+        display: none;
+      }
+      .arrow-pointer {
+        display: none;
+      }
+      .hide {
+        display: none;
+      }
+      .no-content-image {
+        width: 28px;
+        position: relative;
+        left: 94%;
+      }
+      .no-content-files {
+        width: 35px;
+        position: relative;
+        left: 110%;
+        top: -15%;
+        margin-top: 8px;
+      }
+      @media screen and (max-width: 500px) {
+        body {
+          background: #120d31;
+          color: white;
+          margin: 0;
+        }
+        .first-section {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          position: relative;
+          top: 0%;
+          left: 0%;
+          right: 0%;
+          justify-content: space-around;
+          background-color: #120d31;
+          border-bottom: 1px solid whitesmoke;
+          box-shadow: none;
+          margin-bottom: 30px;
+        }
+        .test {
+          position: absolute;
+          top: 9%;
+          z-index: -1;
+          width: 100%;
+        }
+.middle-sec {
+  position: relative;
+  margin: 0;
+  left: 0;
+}
+h1 {
+  margin-inline-start: 10px;
+  margin: 20px 0 25px 10px;
+  font-size: 20px;
+}
+.second-section {
+  display: flex;
+  width: 100%;
+}
+.book-main-section {
+  display: flex;
+  width: 96%;
+  margin: auto;
+  flex-direction: column;
+  height: auto;
+}
+.content-block-image {
     display: grid;
-    grid-template-columns: repeat(5, 6fr);
-    grid-column-gap: 15px;
-    grid-row-gap: 13px;
+    grid-template-columns: repeat(2, 6fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
     justify-items: stretch;
     align-items: stretch;
-    margin-left: 4%;
-    margin-bottom: 4%;
     background: white;
-    padding: 20px 60px 25px 30px;
-    border-radius: 12px;
-    height: 450px;
+    padding: 20px 10px;
+    margin-left: 0;
+    border-radius: 6px;
+    height: fit-content;
+    max-height: 100%;
     overflow-y: scroll;
-    overflow-x:hidden;
+    border-top: 5px solid #691464;
 }
-.content-block::-webkit-scrollbar {
-    width: 0;
+.content-block-image div {
+    height: 140px;
+}
+.content-box {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+}
+.content-block-files {
+    display: grid;
+    grid-template-columns: repeat(1, 6fr);
+    grid-row-gap: 13px;
+    margin-bottom: 10%;
+    background: white;
+    margin-left: 0;
+    border-radius: 6px;
+    max-height: 100%;
+    width: auto;
+    border-top: 5px solid #691464;
+    padding: 0;
+}
+.content-box-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 17px;
+    border-bottom: 1px solid #691464;
+    width: inherit;
+}
+.content-box-name h3 {
+    overflow-x: scroll;
+    width: 230px;
+}
+.btn-danger {
+    padding: 4px 7px;
+    border: 0px;
+    font-size: 15px;
+    font-weight: 100;
+    background: #fff;
+    cursor: pointer;
 }
 .profile-section {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
     position: fixed;
-    top: 70%;
-    right: 4%;
+    top: 83%;
+    right: 5%;
+    width: 210px;
+    height: auto;
+    border: 0;
+  }
+  .profile-section-details {
     text-align: center;
-    height: 200px;
-    width: 215px;
-    border: 2px solid #691464;
-    border-radius: 10px;
-}
-.first-section h1 {
-    margin-bottom: 5px;
-}
-.first-section span {
-    color: darkgray;
-    font-weight: 100;
-}
-.first-section h2 {
-    margin-bottom: 8px;
-    margin-top: 10px;
-}
-.profile-section div a {
-    text-decoration: none;
-    color: black;
-    padding: 10px 35px;
-    font-size: 16px;
-    background: #fff;
-    border-radius: 10px;
+    background: #000000cf;
+    border-radius: 5%;
+    /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8); */
+    border: 0;
+    /* height: 120px; */
+    height: auto;
+    width: inherit;
 }
 .profile-section .username {
-    font-size: 27px;
+    font-size: 20px;
+    overflow-x: scroll;
+    margin: 10px 5px;
 }
-.content-box h3 a {
-    text-decoration: none;
-    color: black;
+.profile-section-details div {
+  margin-top: 20px;
+  height: 38px;
 }
-#no-files {
-    background: white;
-    color: black;
-    margin: 20px 30px;
-    padding: 20px;
+.profile-icon {
+  margin: 10px;
+}
+.profile-icon .fa-user {
+    font-size: 25px;
+    background: #120d31;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.header-title {
+  display: none;
+}
+.mobile-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  width: 94%;
+  background: #120d31;
+}
+.mobile-header h2 {
+  margin: 5px 0 0 0;
+}
+.mobile-header span {
+    font-weight: 100;
+    color: darkgrey;
+    font-size: 11px;
+}
+.mobile-header h3 {
     font-size: 18px;
-    border-radius: 10px;
+    margin: 0;
 }
-#no-files h3 {
-    margin-bottom: 0;
+.mobile-header div + div {
+  text-align: center;
 }
-    </style>
-</head>
-<body>
+.mobile-header .fa-user {
+  font-weight: 900;
+  font-size: 13px;
+  display: none;
+}
+.upload-form {
+  margin: 50px 0 10px 15px;
+}
+.hide-form {
+  display: none;
+}
+.arrow-pointer {
+  display: inline;
+  height: 30px;
+  width: 60px;
+  position: absolute;
+  right: 62%;
+  top: 30%;
+  transform: rotate(165deg);
+}
+.content-box-name h3 a {
+    font-size: 14px;
+}
+.content-box-name h3 a:hover {
+  color: #000;
+  text-decoration: none;
+}
+.first-section h2 {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+.fa {
+  color: #691464;
+}
+.far.fa-trash-alt {
+    color: #2a0228;
+}
+.show-profile {
+  display: none;
+}
+.sticky {
+  box-shadow: 0px 1px 4px #000;
+}
+.hide {
+  display: block;
+}
+.hide2 {
+  display: none;
+}
+.no-content-files {
+  width: 35px;
+  position: relative;
+  left: 46%;
+  top: -15%;
+  margin-top: 8px;
+}
+}
+@media screen and (max-width: 350px) {
+  .content-box-name h3 {
+    overflow-x: scroll;
+    width: 190px;
+  }
+}
+  </style>
+  </head>
+  <body>
     <div class="lib-header">
+      <section class="mobile-header">
+        <div>
+          <h2>PIDIF</h2>
+          <span>your personal book library</span>
+        </div>
+        <div>
+          <i class='fa-solid fa-user'></i>
+          <h3 class="username"><%= `${user.userName}` %></h3>
+        </div>
+      </section>
+      <div class="test">
         <section class="first-section">
-            <div>
-                <h1>PIDIF</h1>
-                <span>your personal book library</span>
-            </div>
-            <div class="upload-form">
-                <h2>Upload</h2>
-                <form action="/upload" method="POST" enctype="multipart/form-data">
-                    <!-- <label for="file">Select File</label> -->
-                    <input type="file" name="file" placeholder="Select File">
-                    <button type="submit">Upload</button>
-                </form>
-            </div>
+          <div class="header-title">
+            <h2>PIDIF</h2>
+            <span>your personal book library</span>
+          </div>
+          <div class="upload-form">
+            <img src="/image/arrow-pointer-3.png" alt="arrow" class="arrow-pointer">
+            <h2 class="hide2">Upload</h2>
+            <h2 class="upload-h2 hide">Upload</h2>
+            <form action="/upload" method="POST" enctype="multipart/form-data" class="hide-form">
+              <!-- <label for="file">Select File</label> -->
+              <input
+                type="file"
+                multiple="multiple"
+                name="file"
+                placeholder="Select File"
+              />
+              <button type="submit">Upload</button>
+            </form>
+          </div>
         </section>
         <section class="middle-sec">
-            <div>
-                <h1>YOUR PIDIF BOOK(s)</h1>
+          <div>
+            <h1>YOUR PIDIF BOOK(s)</h1>
+          </div>
+          <div class="second-section">
+            <div class="book-main-section">
+              <% if(allFiles.length){ %>
+              <div class="content-block-image">
+                <% if (!images.length) { %> 
+                  <img class="no-content-image" src="/image/image-icon2.png" alt="">
+                <% } else { %>
+                  <% images.forEach((file) => { %> 
+                      <div>
+                        <a href="books/<%= file.filename %>" target="_blank"
+                          ><img
+                            src="books/<%= file.filename %>"
+                            alt=" <%= file.filename %> "
+                            class="content-box"
+                        /></a>
+                        <form
+                          method="POST"
+                          action="/files/delete/<%= file._id %>?_method=DELETE"
+                        >
+                          <button class="btn btn-danger"><i class='far fa-trash-alt'></i></button>
+                        </form>
+                      </div>
+                  <%  }) %>
+                <% } %>  
+              </div>
+
+              <div class="content-block-files">
+                <% if (!files.length) { %> 
+                  <img class="no-content-files" src="/image/file-icon2.png" alt="">
+                <% } else { %>
+                  <% files.forEach((file) => { %>
+                  <div class="content-box-name">
+                    <h3>
+                      <a href="books/<%= file.filename %>" target="_blank"
+                        ><%= file.filename %></a
+                      >
+                    </h3>
+                    <form
+                      method="POST"
+                      action="/files/delete/<%= file._id %>?_method=DELETE"
+                    >
+                      <!-- <button class="btn btn-danger">Delete</button> -->
+                      <button class="btn btn-danger"><i class='far fa-trash-alt'></i></button>
+                    </form>
+                  </div>
+                <%  }) %>
+                <% } %> 
+              </div>
+              <% } else { %>
+              <div id="no-files">
+                <h3>No files to show</h3>
+                <p>Upload A File</p>
+              </div>
+              <% } %>
             </div>
-            <div class="second-section">
-                <div class="book-main-section">
-                    <% if(files.length){ %>
-                        <div class="content-block">
-                            <% files.forEach(function(file) { %>
-                                <% if(file.isImage) { %>
-                                    <div>
-                                        <a href="books/<%= file.filename %>"><img src="books/<%= file.filename %>" alt=" <%= file.filename %> " class="content-box"></a>
-                                        <form method="POST" action="/files/delete/<%= file._id %>?_method=DELETE">
-                                            <button class="btn btn-danger">Delete</button>
-                                        </form>
-                                    </div>
-                                <% } else { %>
-                                    <div class="content-box content-box-name">
-                                        <h3><a href="books/<%= file.filename %>"><%= file.filename %></a></h3>
-                                        <form method="POST" action="/files/delete/<%= file._id %>?_method=DELETE">
-                                            <button class="btn btn-danger">Delete</button>
-                                        </form>
-                                    </div>
-                                <% } %>
-                            <% }) %>
-                        </div>
-                    <% } else { %>
-                        <div id="no-files">
-                            <h3>No files to show</h3>
-                            <p>Upload A File</p>
-                        </div>
-                    <% } %>
+            <div class="profile-section">
+              <div class="profile-icon"><i class='fas fa-solid fa-user'></i></div>
+              <div class="profile-section-details show-profile">
+                <% if (!user) { %>
+                <h2>Authentication is required to access this page</h2>
+                <h3>please <a href="/login">login</a></h3>
+                <% } else { %>
+                <h3 class="username"><%= `${user.userName}` %></h3>
+                <div class="logout-div">
+                  <a href="/logout"><i class='fas fa-sign-out-alt'></i></a>
                 </div>
-                <div class="profile-section">
-                    <% if (!user) { %> 
-                        <h2>Authentication is required to access this page</h2>
-                        <h3>please <a href="/login">login</a></h3>
-                    <% } else { %> 
-                        <h3 class="username"><%= `${user.userName}` %></h3>
-                        <div>
-                            <a href="/logout">Logout</a>
-                        </div>  
-                    <% } %> 
-                </div>
+                <% } %>
+              </div>
             </div>
+          </div>
         </section>
+      </div>
     </div>
-</body>
+
+
+    <script>
+      // const profile = document.querySelector('.profile-section-details')
+      // document.querySelector('.profile-icon').addEventListener('click', () => {
+      //   profile.classList.toggle('show-profile')
+      // })
+
+      $(document).ready(() => {
+        $(".upload-h2").click(() => {
+          $(".hide-form").slideToggle(400, 'linear');
+          $(".arrow-pointer").fadeToggle(200)
+        });
+
+        $(".profile-icon").click(() => {
+          console.log('click')
+          $(".show-profile").fadeToggle(500);
+        });
+      });
+
+      // $(document).ready(() => {
+      //   $(".profie-icon").click(() => {
+      //     $(".show-profile").fadeToggle('fast');
+      //   });
+      // });
+
+      window.addEventListener("scroll" ,() => {
+        let header = document.querySelector(".mobile-header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      });
+    </script>
+  </body>
 </html>
